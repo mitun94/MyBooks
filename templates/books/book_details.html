@@ -5,11 +5,8 @@
 {% endblock %}
 
 {% block content %}
-    {% for books in book %}
-    <ul>
-
-      <li> <a href="{% url 'book_details' books.pk %}">{{ books.title }}</a></li>
-
-    </ul>
-    {% endfor %}
+    <h3>{{ book.title }}</h3>
+    <h5>{{ book.author }}</h5>
+    <strong><h7>{{ book.category }}</h7></strong>
+    <p>{{ book.description }}</p>
 {% endblock %}

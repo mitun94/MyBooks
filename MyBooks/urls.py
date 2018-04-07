@@ -22,5 +22,7 @@ from books import views
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^$', views.booklist, name='booklist'),
+    url(r'^book_details/(?P<pk>\d+)/$', views.book_details, name='book_details'),
+    url(r'^add/$', views.add_book, name='add_book'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
