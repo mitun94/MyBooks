@@ -14,6 +14,22 @@ def book_details(request, pk):
     return render(request, 'books/book_details.html', {'book':book})
 
 
+def edit_book(request, pk):
+    book = BookItem.objects.get(pk=pk)
+    if request.method == 'POST':
+        form = BookItemForm(request.POST, instance=book)
+        form.save()
+        return redirect('booklist')
+    else:
+        form = BookItemForm(instance=book)
+    context = {'form':form}
+    return render(request, 'books/edit_book.html', context)
+
+def delete_book(request, pk):
+    book = BookItem.objects.get(pk=pk)
+    book.delete()
+    return redirect('booklist')
+
 def add_book(request):
     form = BookItemForm()
     # A HTTP POST?

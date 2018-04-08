@@ -9,7 +9,11 @@
     <ul>
 
       <li> <a href="{% url 'book_details' books.pk %}">{{ books.title }}</a></li>
+      <a class="btn btn-primary" href="{% url 'edit_book' books.pk %}">Edit</a>
+      <a class="btn btn-danger" href="{% url 'delete_book' books.id %}">Delete</a>
 
     </ul>
     {% endfor %}
+    <a class="btn btn-primary" href=" {% url 'add_book' %}">Add New book</a>
+
 {% endblock %}

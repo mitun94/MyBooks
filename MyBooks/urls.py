@@ -24,5 +24,7 @@ urlpatterns = [
     url(r'^$', views.booklist, name='booklist'),
     url(r'^book_details/(?P<pk>\d+)/$', views.book_details, name='book_details'),
     url(r'^add/$', views.add_book, name='add_book'),
+    url(r'^edit/(?P<pk>\d+)/$', views.edit_book, name='edit_book'),
+    url(r'^delete/(?P<pk>[0-9]+)/$', views.delete_book, name='delete_book'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
